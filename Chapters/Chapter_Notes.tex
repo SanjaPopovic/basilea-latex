@@ -4,4 +4,29 @@
 \section{LSC 2020 Papers}
 
 \subsection{Interactive Lifelog Retrieval with vitrivr (LSC20\_DBIS)}
-hello
+what is LSC: In the lifelog search challenge, different multimedia retrieval systems compete in finding secific data. The teams must find a video or a picture as fast as possible. Therefore, it is important to make the queries as efficient and as user friendly as possible. 
+\\
+Dataset: The dataset consists of 115 days of videos and pictures(193'911) collected during a lifelog. Lifelogger record their everyday life (body mounted camera). Thus, the dataset is huge and is perfectly suitable and advantageous for testing, developing and improving multimedia retrieval systems and has spatio-temporal features. To make it possible to query for the images, they are equipped with information (such as local time, geo location, sensor readings for heart rate, tepos, speed and other metadata).
+\\
+vitrivr: vitrivr is a multimedia retrieval stack and consists of three layers. In the third layer, Cottontail DB, the data is permanently saved. The middle layer, Cineast, is responsible for the extraction of features and processing queries from the first layer, Vitrivr NG. With Vitrivr NG, the user can formulate and combine queries and in the end, get the result data visualized.
+It is possible to retrieve audio, images, video and 3D models. 
+\\
+\textit{how to get multiple query containers? (red part in paper)} 
+\\
+Existing functionalities in vitrivr: 
+\begin{itemize}
+\item Pictures taken in a day belong together such as keyframes in videos. The data model is called \textit{Image Sequence Media Type}. Each single images of the serie is mapped to a media segment. The media segments belong to a single media object in the data model. (The features are generated per media segment)
+
+\item With boolean queries, the user can search for a specific time, location, time span and so on.(example weekday=Wednesday)
+
+\item With Vitrivr NG, it is possible to refine the result set with filters during browsing.
+\end{itemize}
+\\
+New functionalities:
+\begin{itemize}
+\item temporal scoring-it is possible to add a time property where the user can query "canyon occurs before bridge \textbf{within 30s.}". After the queries for "brigde" and "canyon" are executed and fused, the multimedia objects of the result set are then examined (for the time). The segments of the multimedia objects are temporally ordered. 
+
+\item deep learning based semantic concepts
+
+\item staged querying: Previously, when querying for a building and a white blob, two lookups would run independently against the entire collection. There would be only a few results and alot of false positives only containing one of the required features because of the OR relation. With the new early filtering, the user can first query for a building, then on the new resulting subset instead of the entire collection, query for white blob. With this technique, there are less false negatives.
+\end{itemize}
