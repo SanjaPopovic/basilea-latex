@@ -30,3 +30,52 @@ New functionalities:
 
 \item staged querying: Previously, when querying for a building and a white blob, two lookups would run independently against the entire collection. There would be only a few results and alot of false positives only containing one of the required features because of the OR relation. With the new early filtering, the user can first query for a building, then on the new resulting subset instead of the entire collection, query for white blob. With this technique, there are less false negatives.
 \end{itemize}
+
+
+\subsection{Exquisitor at the Lifelog Search Challenge 2020}
+Exquisitor is an interactive learning system. With the help of user, the system "learns" what the user wants. The user helps with deciding which images of a suggested collection match the discription on a task in LSC. The user either accepts or declines an image. If an image is accepted, the system suggests a new image which resembles (has similar features as) the accepted image.\\
+
+The classification takes place with the help of support vector machine (SVM), a machine learning algorithm. The system learns what the user wants. Through the interactive learning interface, the system initially suggests a collection of images from the LSC dataset and the user gives feedback on those (accept or decline). With the help of the feedback from the user, the system learns, and provides new suggestions (iterates as long as user isn't satisfied).
+
+
+\subsection{VRLE: Lifelog Interaction Prototype in Virtual Reality}
+This project focusses more on the interaction methods between user and the VR-device. The VR-device offers two tabs: in one tab, the user can choose the temporal aspect of a query (day, time) and in another tab, the user can choose zero to many concepts such as apple, airport, altar, area etc. The concepts are located in subtabs (alphabetically ordered).\\
+There are two developed interaction methods in this project. In the first method, the user interacts with the UI via controllers equipped with beams (Distance-Based Interaction). In the second method, the user touches the screen with drumstick-like sticks (Contacted-Based Interaction).\\
+Initially, features as text, times and GPS coordinates etc. from the images of the dataset are extracted and indexed. \\
+It is discussed how the user can find an image as fast as possible. Since the VRLE system works with events (multiple images in one event) and since the LSC task is about finding a specific image, an event is presented with nine ranked keyframes. The ranking is done by the search engine. If for example all images would have been presented, the user might be overwhelmed. The developers engaged in opimizing the user experience by questioning which keyframes should be shown and how should the user interact with the system (query formulation and actual interaction).
+
+\subsection{Myscéal: An Experimental Interactive Lifelog Retrieval System for LSC’20}
+The Myscéal system supports natural language queries. The user queries for example "having coffee at the helix at 9 am on 23 August" (taken from paper)(the system will recognize that there is an object (coffee), location (the helix), time (9 am), and date (23 August)). The system then extracts information such as location, action, time and date. Sequential queries are also supported. The user can provide information about the actions before and after the sought event. Mysceal has the same search engine as "VRLE: Lifelog Interaction Prototype in Virtual Reality". In general, information such as location, time, activities and visual concepts are saved. GPS information from the metadata are saved as longitude and latitude. Besides the mentionned information, an object detecter is used. With object detection, the system can also evaluate how relevant an object is in the image. \textbf{An important addition is the possibility to query for times GPS data. The user can draw a rectangle on the map.}\\
+
+\subsection{lifeXplore at the Lifelog Search Challenge 2020}
+Images from a day are bundled and converted into a video.\\
+LifeXplore offers various \textit{feature maps} organized by for example "car" or "person". A map is big and consists of keyframes. It would be too time-consuming for a LSC task, but in general, the user could explore the map and could do further query refinement.\\
+A \textit{day summary view} is offered, where the user can look at all images of a specific day.\\
+
+LifeXplore offers multiple retrieval options: concept and metadata search, sketch search as well as similarity search(taken from paper). 
+The so called \textit{Filter View} offers combining mutiple filters. (activate the weekday filter for only retrieving weekdays together with a time range filter for "10:00-14:30" in combination with a named location from the metadata, "The Helix". The result view on the right-hand side contains all retrieved shots ordered by video. Besides the most basic filters such as weekday and time, lifeXplore includes following additional filters: deep concepts, speed, heart rate, number of steps, calories burned, activity type and geographic location-taken from paper)\\
+
+With the \textit{Sketch Search View}, the user can sketch and hence retrieve keyframes (Figure 5 in paper). The system also provides a similarity search (lifeXplore tries to find similar shots according to the current user-chosen similarity measure-paper).
+
+\subsection{A Multi-level Interactive Lifelog Search Engine with User Feedback}
+While preprocessing the data, blurry images and duplicates are removed and features extracted (three level feature extraction).
+Three level feature extraction: visual, textual, behavior features.\\
+The user can provide temporal aspects to query. Possibilities: text as query ((similar to Exquisitor) the user can give negative feedback on images and thus exclude them from the result list and then the system can get more information from the user that cannot be extracted from the queries), image as query (user can upload image and similar images are suggested), timeline view. 
+
+
+\subsection{LifeGraph: a Knowledge Graph for Lifelogs}
+
+\subsection{BIDAL-HCMUS@LSC2020: An Interactive Multimodal Lifelog Retrieval with Query-to-Sample Attention-based Search Engine}
+The user can create text queries and query with images. Filters are also available, so that the user can enrich the query. The user can modify the result set by removing inaccurate images.
+
+\subsection{Multimodal Retrieval through Relations between Subjects and Objects in Lifelog Images}
+With this system, the user can formulate text queries or provide keywords such as time, location, activity and concepts.
+Datetime and location can also be specified by the user. \textbf{A map with in the lifelog visited locations is shown.}
+
+\subsection{LifeSeeker 2.0 : Interactive Lifelog Search Engine at LSC 2020}
+\textbf{This system has a different approach for visualizing location aspects-interactive transitional graph based filter. Vertices in the graph represent locations and the directed edges represent the chronological order. The graph can be represented on three different levels: country, location, area of location. If the user travelled from Switzerland to Germany, then on the country level, a directed edge would go from vertex Switzerland to vertex Germany. The user can click on a vertex and the system would then display relevant images taken there.}\\
+
+When the user clicks on an image chosen from the result set, the chosen image appears in a pop-up together with images taken before and after.
+In general, a user can create free-text queries and also filter with time and location keywords etc. or use the graph-based filter.\\
+
+The developers also have taken care of extracting textual information (text in images). With this, it is possible to identify what the lifelogger is doing (activity).
