@@ -79,3 +79,20 @@ When the user clicks on an image chosen from the result set, the chosen image ap
 In general, a user can create free-text queries and also filter with time and location keywords etc. or use the graph-based filter.\\
 
 The developers also have taken care of extracting textual information (text in images). With this, it is possible to identify what the lifelogger is doing (activity).
+
+\subsection{VIRET Tool with Advanced Visual Browsing and Feedback}
+The updates in  2020 of the VIRET system focussed on improving the result set visualization.\\
+\textit{Images of a day - bundled together (as keyframes, one video).}\\
+It is possible, to create free-text queries and to apply filters (date, biometrics, GPS). Futhermore, the user can create temporal queries by describing two consecutive shots. New improvement is to better visualize ranked images. (Moreover, the target scene frame (or visually similar one) could get promising rank with respect to the overall collection size (e.g., rank 1000 out of one million), yet the frame is practically unreachable with the sequential browsing approach and a time limit to solve the task. To address these issues, our primary objective focuses on the presentation of top ranked results of a provided query.-paper)
+To help the user to understand the result set, descriptors are added to image, which the user can see.
+
+\subsection{SOMHunter for Lifelog Search}
+Procedure: The user enters a text query (also possible to add days, time) and the system returns a map of images. As an intermediate step, the user then selects images that seem relevant and the system proposes new images (a new map) with temporal context. With temporal context they mean displaying top ranked images with according frames that were taken before and after (Figure 1-paper). \\
+The user can access previous maps, if the new generated map doesn't have relevant images. 
+
+\subsection{FIRST - Flexible Interactive Retrieval SysTem for Visual Lifelog Exploration at LSC 2020}
+entering query in text format\\
+System extracts text from image such as brand name, shop names, street names. Also, the team manually added captions to some images and later, the system's "captioning module" could then caption the whole lifelog dataset. The system also extracts personalized concepts of the lifelogger (his everyday visual objects that are not available outside). The system also can group consecutive images, provides querying by example, querying by text. The user can mark images as negative example and the system  eliminates images that are similar to it.
+
+\subsection{Voxento: A Prototype Voice-controlled Interactive Search Engine for Lifelogs}
+The user creates, deletes and ends queries by speaking. The user can manually edit the text which the system extracted from the users spoken sentence. The user can speak continuously and \textit{see in real-time the updates to the result set as they continue to formulate a long query.-paper} The response of the system is also spoken (and visualized).
